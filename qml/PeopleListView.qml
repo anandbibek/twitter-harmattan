@@ -53,12 +53,12 @@ TwitterPage {
         anchors.left: parent.left
         anchors.right: parent.right
         height: 40
-        color: "#E6E6E6"
+        color: "#101010"
         Text {
             anchors.left: parent.left
             anchors.leftMargin: 16
             text: showFollowers ? qsTrId("qtn_twitter_profile_followers") : qsTrId("qtn_twitter_profile_following")
-            color: "#666666"
+            color: "#ffffff"
             font.pixelSize: fonts.c_size -2
             font.bold: true
             anchors.verticalCenter: parent.verticalCenter
@@ -67,7 +67,7 @@ TwitterPage {
             anchors.right: parent.right
             anchors.rightMargin: 16
             text: showFollowers ? dataHandler.getLocalizedInt(profile_subview_followers_count) : dataHandler.getLocalizedInt(profile_subview_friends_count)
-            color: "#999999"
+            color: "#d0d0d0"
             font.pixelSize: fonts.c_size -2
             anchors.verticalCenter: parent.verticalCenter
         }
@@ -105,7 +105,7 @@ TwitterPage {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: parent.width - 32
-                color: "#999999"
+                color: "#d0d0d0"
                 font.pixelSize: 50
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignHCenter

@@ -10,7 +10,7 @@ Item {
     Rectangle {
         anchors.fill: parent
         id: background
-        color: "#DDDDDD"
+        color: "#202020"
         visible: mouse_area.containsMouse ? true : false
     }
 

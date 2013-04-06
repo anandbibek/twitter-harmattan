@@ -26,7 +26,7 @@ MouseArea {
     Rectangle{
         anchors.fill: parent
         id: background
-        color: "#DDDDDD"
+        color: "#202020"
         visible: parent.containsMouse ? true : false
     }
 
@@ -55,7 +55,7 @@ MouseArea {
 
             font.pixelSize: fonts.b_size
             wrapMode: Text.Wrap
-            color: message_received ? "#333333" : "#999999"
+            color: message_received ? "#ffffff" : "#d0d0d0"
             textFormat: Text.RichText
 
             text: message_text
@@ -72,6 +72,7 @@ MouseArea {
             textFormat: Text.RichText
             visible: false
             text: message_text
+            color: "white"
         }
         Item {
             width: parent.width
@@ -104,7 +105,7 @@ MouseArea {
             id: tweet_separator_line
             width: parent.width
             height: 1
-            color: "#E3E3E3"
+            color: "#808080"
         }
     }
 }

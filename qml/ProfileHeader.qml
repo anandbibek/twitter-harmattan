@@ -16,13 +16,13 @@ Rectangle {
 
     signal clicked
 
-	color: "#E3E3E3"
+	color: "#101010"
 
     height: 73 + 2 * 12
 
     Rectangle {
         anchors.fill: parent
-        color: "#DDDDDD"
+        color: "#202020"
         visible: showArrow && mouse_area.containsMouse ? true : false
     }
 

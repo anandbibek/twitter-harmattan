@@ -10,7 +10,7 @@ Item {
     Rectangle {
         anchors.fill: parent
         id: background
-        color: mouse_area.containsMouse ? "#DDDDDD" : ((reply_name == undefined || reply_name == "") ? "#F2F2F2" : "#EDEDED")
+        color: mouse_area.containsMouse ? "#202020" : ((reply_name == undefined || reply_name == "") ? "#000000" : "#070707")
     }   
 
     Loader {
@@ -73,6 +73,7 @@ Item {
                                 text: qsTrId("qtn_twitter_reply_tweet_command")
                                 font.pixelSize: fonts.f_size
                                 font.bold: true
+                                color: "white"
                             }
                         }
 
@@ -104,6 +105,7 @@ Item {
                                 text: retweeted_by_me_id != "" ? qsTrId("qtn_twitter_undo_retweet_command") : qsTrId("qtn_twitter_retweet_command")
                                 font.pixelSize: fonts.f_size
                                 font.bold: true
+                                color: "white"
                             }
                         }
 
@@ -135,6 +137,7 @@ Item {
                                 text:  qsTrId("qtn_twitter_delete_command")
                                 font.pixelSize: fonts.f_size
                                 font.bold: true
+                                color: "white"
                             }
                         }
 
@@ -160,6 +163,7 @@ Item {
                                 text: favorited ? qsTrId("qtn_twitter_unfavorite_command") : qsTrId("qtn_twitter_favorite_command")
                                 font.pixelSize: fonts.f_size
                                 font.bold: true
+                                color: "white"
                             }
                         }
 
@@ -248,7 +252,7 @@ Item {
         width: parent.width
         anchors.bottom: parent.bottom
         height: 1
-        color: "#E3E3E3"
+        color: "#606060"
     }
 
     Component.onCompleted: {

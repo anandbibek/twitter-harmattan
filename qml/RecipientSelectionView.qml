@@ -18,7 +18,7 @@ TwitterPage {
         anchors.left: parent.left
         anchors.right: parent.right
 
-        source: "../images/twitter-top-pane-light.png"
+        source: "../images/twitter-top-pane.png"
 
         TextField {
             id:text_input
@@ -33,8 +33,8 @@ TwitterPage {
             inputMethodHints: Qt.ImhNoPredictiveText
 
             platformStyle: TextFieldStyle {
-                background: "qrc:///resources/images/twitter-textedit.png"
-                backgroundSelected: "qrc:///resources/images/twitter-textedit-selected.png"
+                background: "../images/twitter-textedit.png"
+                backgroundSelected: "../images/twitter-textedit-selected.png"
                 backgroundCornerMargin: 18
                 paddingRight: clearButton.width + 8
                 baselineOffset: 0
@@ -80,6 +80,7 @@ TwitterPage {
             width: 130
             inverted: false
             text: qsTrId("qtn_twitter_cancel_command")
+            textColor: "white"
 
             onClicked: window.prevPage()
         }

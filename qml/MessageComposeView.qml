@@ -43,7 +43,7 @@ TwitterPage {
     Rectangle {
         id: profileViewRect
 
-        color: "lightgrey"
+        color: "#000000"
 
         anchors.top: topBar.bottom
         anchors.left: parent.left

@@ -46,12 +46,12 @@ TwitterPage {
             inputMethodHints: Qt.ImhNoPredictiveText
 
             platformStyle: TextFieldStyle {
-                background: "qrc:///resources/images/twitter-textedit.png"
-                backgroundSelected: "qrc:///resources/images/twitter-textedit-selected.png"
+                background: "../images/twitter-textedit.png"
+                backgroundSelected: "../images/twitter-textedit-selected.png"
                 backgroundCornerMargin: 18
                 paddingRight: clearButton.width + 8
                 baselineOffset: 0
-                textColor: "#333333"
+                textColor: "#101010"
             }
 
             platformSipAttributes: SipAttributes {

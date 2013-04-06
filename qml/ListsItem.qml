@@ -14,7 +14,7 @@ Item {
     Rectangle {
         anchors.fill: parent
         id: background
-        color: "#DDDDDD"
+        color: "#202020"
         visible: profile_mouse_area.containsMouse || list_mouse_area.containsMouse ? true : false
     }
 

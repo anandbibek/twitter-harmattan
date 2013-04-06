@@ -5,9 +5,9 @@ Button {
     property bool isBlue: false
 
     platformStyle: ButtonStyle{
-        textColor: isBlue ? "white" : "black"
+        textColor: "white"
 
-        background: isBlue ? "qrc:///resources/images/twitter-button-sign-in-blue.png" : "qrc:///resources/images/twitter-button-sign-in-grey.png"
-        pressedBackground: "qrc:///resources/images/twitter-button-sign-in-pressed.png"
+        background: isBlue ? "../images/twitter-button-sign-in-blue.png" : "../images/twitter-button-sign-in-grey.png"
+        pressedBackground: "../images/twitter-button-sign-in-pressed.png"
     }
 }

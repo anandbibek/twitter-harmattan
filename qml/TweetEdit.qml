@@ -26,7 +26,7 @@ Rectangle {
     onStateChanged: uploadImagesCount = uploadImages.model.count;
 
     height: edit.height + controls.height + image_grid_area.height
-    color: "#FFFFFF"
+    color: "#000000"
     clip: true
 
     Fonts { id: fonts }
@@ -36,7 +36,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
         height: 2
-        color: "#E9E9E9"
+        color: "#000000"
     }
 
     Text {
@@ -45,7 +45,7 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.leftMargin: 16
         font.pixelSize: 20
-        color: "#999999"
+        color: "#cccccc"
         opacity: 0
     }
 
@@ -63,6 +63,7 @@ Rectangle {
             backgroundSelected: ""
             backgroundDisabled: ""
             backgroundError: ""
+            textColor: "white"
         }
 
         platformSipAttributes: SipAttributes {
@@ -81,7 +82,7 @@ Rectangle {
         anchors.bottomMargin: 16
 
         font.pixelSize: fonts.c_size + 2
-        color: "#999999"
+        color: "#cccccc"
 
         text: dataHandler.getLocalizedInt(140 - tweetedit.textLenght)
     }
@@ -124,6 +125,7 @@ Rectangle {
         anchors.rightMargin: 16
         visible: (!messagingMode && parent.state != "minimized") ? true : false
         height: messagingMode ? 0 : 80 + (locationLabel.visible ? locationLabel.height + locationLabel.anchors.bottomMargin : 0)
+        color: "black"
 
         Image {
             id: contacts
@@ -168,7 +170,7 @@ Rectangle {
             anchors.verticalCenter: contacts.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
             font.pixelSize: fonts.c_size + 2
-            color: "#999999"
+            color: "#ffffff"
             text: dataHandler.getLocalizedInt(140 - tweetedit.textLenght)
         }
 
@@ -183,7 +185,7 @@ Rectangle {
             anchors.rightMargin: 8
             anchors.bottomMargin: 8
             font.pixelSize: fonts.c_size
-            color: "#999999"
+            color: "#ffffff"
             visible: false
 
             onPlaceStringChanged: {
@@ -321,7 +323,7 @@ Rectangle {
         anchors.right: parent.right
         height: (uploadImagesCount > 0 && !inputVisible) ? 320 : 0
         clip: true
-        color: "#F2F2F2"
+        color: "#000000"
 
         property bool inputVisible: false
 

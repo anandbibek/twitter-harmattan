@@ -6,7 +6,7 @@ TwitterPage {
     orientationLock: window.orientationLock
     Fonts { id: fonts }
 
-    property string item_fontcolor: fonts.c_color
+    property string item_fontcolor: "white"
     property int item_fontsize: fonts.c_size
 
     TopBar {
@@ -30,7 +30,7 @@ TwitterPage {
             anchors.left:parent.left
             Rectangle{
                 anchors.fill: parent;
-                color: "#DDDDDD";
+                color: "#202020";
                 visible: profile_mouse_area.containsMouse ? true : false
             }
             Image {
@@ -82,7 +82,7 @@ TwitterPage {
             anchors.left:parent.left
             Rectangle{
                 anchors.fill: parent;
-                color: "#DDDDDD";
+                color: "#202020";
                 visible: favorites_mouse_area.containsMouse ? true : false
             }
             Image {
@@ -134,7 +134,7 @@ TwitterPage {
 
             Rectangle{
                 anchors.fill: parent;
-                color: "#DDDDDD";
+                color: "#202020";
                 visible: retweets_mouse_area.containsMouse ? true : false
             }
             Image {
@@ -179,7 +179,7 @@ TwitterPage {
 
         height: listsLabel.height + 16
 
-        color: "#E0E0E0"
+        color: "#000000"
 
         Text {
             id: listsLabel
@@ -187,7 +187,7 @@ TwitterPage {
             anchors.left: parent.left
             anchors.leftMargin: 16
             font.pixelSize: fonts.f_size
-            color: "grey"
+            color: "white"
 
             text: qsTrId("qtn_twitter_more_lists")
         }

@@ -40,7 +40,7 @@ Item {
         text: name != undefined ? name : ""
 
         font.bold: true
-        color: "#333333"
+        color: "#e0e0e0"
         font.pixelSize: fonts.c_size - 4
     }
     Item {
@@ -89,7 +89,7 @@ Item {
         textFormat: Text.PlainText
         text: status_text != undefined ? status_text : ""
         font.pixelSize: fonts.c_size - 2        
-        color: "#333333"
+        color: "#e0e0e0"
     }
     Item {
         id:location_item

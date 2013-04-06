@@ -58,7 +58,7 @@ Item {
 
             font.pixelSize: fonts.c_size
             font.bold: true
-            color: "black"
+            color: "white"
             wrapMode: Text.NoWrap
             elide: Text.ElideRight
         }

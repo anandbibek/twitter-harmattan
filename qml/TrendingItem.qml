@@ -14,7 +14,7 @@ Item {
     width: parent.width
     Rectangle {
         anchors.fill: parent
-        color: "#DDDDDD"
+        color: "#202020"
         visible: mouse_area.containsMouse ? true : false
     }
     Row {
@@ -29,14 +29,14 @@ Item {
                 Text {
                     wrapMode: Text.Wrap
                     text: modelData != undefined ? modelData : ""
-                    color: "#000000"
+                    color: "#ffffff"
                     font.pixelSize: fonts.c_size -2
                     font.bold: true
                 }
                 Text {
                     wrapMode: Text.Wrap
                     text: filter
-                    color: "#00C0FF"
+                    color: "#e0e0e0"
                     font.pixelSize: fonts.c_size -2
                     font.bold: true
                     visible: index == (rep.count - 1) ? false : true
@@ -50,7 +50,7 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         wrapMode: Text.Wrap
         text: query_item != undefined ? query_item : ""
-        color: "#000000"
+        color: "#ffffff"
         font.pixelSize: fonts.c_size -2
         font.bold: true
         visible: filter == "" ? true : false
@@ -68,6 +68,6 @@ Item {
         width: parent.width
         anchors.top: parent.bottom
         height: 1
-        color: "#E6E6E6"
+        color: "#808080"
     }
 }

@@ -268,7 +268,7 @@ TwitterPage {
 
                         font.pixelSize: fonts.c_size
                         font.bold: true
-                        color: "black"
+                        color: "white"
 
                         text: contextMenu.messageScreenName
                     }
@@ -283,7 +283,7 @@ TwitterPage {
                         textFormat: Text.RichText
 
                         font.pixelSize: fonts.b_size - 2
-                        color: "#999999"
+                        color: "#d0d0d0"
                     }
                 }
             }
@@ -300,6 +300,7 @@ TwitterPage {
                         font.pixelSize: fonts.f_size
                         text: qsTrId("qtn_twitter_delete_message_command")
                         font.bold: true
+                        color: "white"
                     }
 
                     onClicked: {

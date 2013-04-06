@@ -13,7 +13,7 @@ Item {
     Rectangle{
         anchors.fill: parent
         id: background
-        color: "#DDDDDD"
+        color: "#202020"
         visible: mouse_area.containsMouse ? true : false
     }
 
@@ -57,7 +57,7 @@ Item {
 
         font.pixelSize: fonts.c_size - 4
         font.bold: true
-        color: "#000000"
+        color: "#ffffff"
 
         text: screen_name != undefined ? screen_name : ""
     }
@@ -73,7 +73,7 @@ Item {
 
         font.pixelSize: fonts.c_size - 2
         elide: Text.ElideRight        
-        color: "#666666"
+        color: "#ffffff"
         clip: true
         textFormat: Text.RichText
 
@@ -95,7 +95,7 @@ Item {
         anchors.rightMargin: 16
 
         font.pixelSize: fonts.d_size
-        color: "#A5A5A5"
+        color: "#ffffff"
         textFormat: Text.RichText
 
         text: dataHandler.createTimeString(created_at)
@@ -125,7 +125,7 @@ Item {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         height: 1
-        color: "#E6E6E6"
+        color: "#101010"
     }
 
 }

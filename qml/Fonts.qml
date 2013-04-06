@@ -4,10 +4,10 @@ Item {
     property color a_color: "#FFFFFF"
     property int a_size: 40
 
-    property color b_color: "#000000"
+    property color b_color: "#ffffff"
     property int b_size: 24
 
-    property color c_color: "#000000"
+    property color c_color: "#ffffff"
     property int c_size: 24
 
     property color d_color: "#A6A8AB"

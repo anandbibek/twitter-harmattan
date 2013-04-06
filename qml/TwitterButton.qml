@@ -18,7 +18,7 @@ Button {
 
         background: {
             if (isTopButton && isBlueButton) {
-                return "qrc:///resources/images/twitter-top-button-blue.png"
+                return "../images/twitter-top-button-blue.png"
             } else if(isDialogButton) {
                 if(isPositiveAnswer) {
                     return "image://theme/meegotouch-dialog-button-positive"
@@ -32,7 +32,7 @@ Button {
 
         pressedBackground: {
             if (isTopButton && isBlueButton) {
-                return "qrc:///resources/images/twitter-top-button-blue-pressed.png"
+                return "../images/twitter-top-button-blue-pressed.png"
             } else if(isDialogButton) {
                 if(isPositiveAnswer) {
                     return "image://theme/meegotouch-dialog-button-positive-pressed"
@@ -46,6 +46,7 @@ Button {
 
         backgroundMarginTop: 20
         backgroundMarginBottom: 20
+        textColor: "white"
     }
 
     Text {
@@ -54,6 +55,7 @@ Button {
         font: twitterButton.font
         wrapMode: Text.NoWrap
         visible: false
+        color: "white"
 
         property bool pendingScaleUpdate: false
         function scaleText() {

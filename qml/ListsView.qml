@@ -51,7 +51,7 @@ TwitterPage {
         anchors.left: parent.left
         anchors.right: parent.right
         height: 40
-        color: "#E6E6E6"
+        color: "#000000"
         Text {
             anchors.left: parent.left
             anchors.leftMargin: 16

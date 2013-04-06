@@ -31,7 +31,7 @@ TwitterPage {
             anchors.left: parent.left
             anchors.right: parent.right
 
-            source: "../images/twitter-top-pane-light.png"
+            source: "../images/twitter-top-pane.png"
 
             TwitterButton {
                 id: cancelButton
@@ -43,6 +43,7 @@ TwitterPage {
                 width: 130
                 inverted: false
                 text: qsTrId("qtn_twitter_cancel_command")
+                textColor: "white"
 
                 onClicked: window.prevPage()
             }
@@ -96,7 +97,7 @@ TwitterPage {
             Rectangle{
                 anchors.fill: parent
                 id: background
-                color: "#DDDDDD"
+                color: "#202020"
                 visible: parent.containsMouse ? true : false
             }
 
@@ -152,7 +153,7 @@ TwitterPage {
             anchors.leftMargin: 16
             anchors.rightMargin: anchors.leftMargin
 
-            color: "lightgrey"
+            color: "#202020"
 
             height: 1
         }
@@ -183,7 +184,7 @@ TwitterPage {
 
                 labelText: qsTrId("qtn_twitter_profile_name")+":"
                 text: profileview_firstname
-                textColor: valid ? "#191919": "#FF0000"
+                textColor: valid ? "#ffffff": "#FF0000"
 
                 onEnterPressed: urlEditLine.forceActiveFocus()
             }
@@ -194,7 +195,7 @@ TwitterPage {
 
                 labelText: qsTrId("qtn_twitter_profile_url")+":"
                 text: profileview_url
-                textColor: valid ? "#191919": "#FF0000"
+                textColor: valid ? "#ffffff": "#FF0000"
 
                 onEnterPressed: locationEditLine.forceActiveFocus()
             }
@@ -205,7 +206,7 @@ TwitterPage {
 
                 labelText: qsTrId("qtn_twitter_profile_location")+":"
                 text: profileview_location
-                textColor: valid ? "#191919": "#FF0000"
+                textColor: valid ? "#ffffff": "#FF0000"
 
                 onEnterPressed: bioEditLine.forceActiveFocus()
             }
@@ -236,7 +237,7 @@ TwitterPage {
                 Text {
                     id: label
 
-                    color: bioTextField.activeFocus ? "#35CDFF" : "grey"
+                    color: bioTextField.activeFocus ? "#d0d0d0" : "grey"
 
                     anchors.top: bioTextField.top
                     anchors.left: bioArrowLabel.right
@@ -263,7 +264,7 @@ TwitterPage {
                     }
 
                     platformStyle: TextAreaStyle {
-                        textColor: bioTextField.valid ? "#191919": "#FF0000"
+                        textColor: bioTextField.valid ? "#ffffff": "#FF0000"
                         background: ""
                         backgroundSelected: ""
                         backgroundDisabled: ""

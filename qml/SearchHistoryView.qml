@@ -33,12 +33,12 @@ TwitterPage {
             inputMethodHints: Qt.ImhNoPredictiveText
 
             platformStyle: TextFieldStyle {
-                background: "qrc:///resources/images/twitter-textedit.png"
-                backgroundSelected: "qrc:///resources/images/twitter-textedit-selected.png"
+                background: "../images/twitter-textedit.png"
+                backgroundSelected: "../images/twitter-textedit-selected.png"
                 backgroundCornerMargin: 18
                 paddingRight: clearButton.width + 8
                 baselineOffset: 0
-                textColor: "#333333"
+                textColor: "#ffffff"
             }
 
             platformSipAttributes: SipAttributes {
@@ -131,19 +131,19 @@ TwitterPage {
 
                 width: searchview.width
                 height: 40
-                color: "#E6E6E6"
+                color: "#101010"
                 Rectangle {
                     anchors.top: parent.top
                     anchors.left: parent.left
                     anchors.right: parent.right
                     height: 1
-                    color: "#CCCCCC"
+                    color: "#202020"
                 }
                 Text {
                     anchors.left: parent.left
                     anchors.leftMargin: 16
                     text: qsTrId("qtn_twitter_search_saved_head")
-                    color: "#666666"
+                    color: "#d0d0d0"
                     font.pixelSize: item_fontsize -2
                     font.bold: true
                     anchors.verticalCenter: parent.verticalCenter
@@ -160,19 +160,19 @@ TwitterPage {
                 id: trends_header
                 width: searchview.width
                 height: 40
-                color: "#E6E6E6"
+                color: "#101010"
                 Rectangle {
                     anchors.top: parent.top
                     anchors.left: parent.left
                     anchors.right: parent.right
                     height: 1
-                    color: "#CCCCCC"
+                    color: "#202020"
                 }
                 Text {
                     anchors.left: parent.left
                     anchors.leftMargin: 16
                     text: qsTrId("qtn_twitter_first_run_trends")
-                    color: "#666666"
+                    color: "#d0d0d0"
                     font.pixelSize: item_fontsize -2
                     font.bold: true
                     anchors.verticalCenter: parent.verticalCenter

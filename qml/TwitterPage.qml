@@ -6,7 +6,7 @@ Page {
 
     Rectangle {
         anchors.fill: parent
-        color: "#F2F2F2"
+        color: "#000000"
     }
 
     MouseArea {

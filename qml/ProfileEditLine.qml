@@ -38,7 +38,7 @@ Item {
     Text {
         id: label
 
-        color: textField.activeFocus ? "#35CDFF" : "grey"
+        color: textField.activeFocus ? "#ffffff" : "d0d0d0"
         font.pixelSize: 24
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: arrowLabel.right

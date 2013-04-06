@@ -24,7 +24,7 @@ Sheet {
         anchors.left: parent.left
         anchors.right: parent.right
 
-        source: "../images/twitter-top-pane-light.png"
+        source: "../images/twitter-top-pane.png"
 
         TextField {
             id:text_input
@@ -39,8 +39,8 @@ Sheet {
             inputMethodHints: Qt.ImhNoPredictiveText
 
             platformStyle: TextFieldStyle {
-                background: "qrc:///resources/images/twitter-textedit.png"
-                backgroundSelected: "qrc:///resources/images/twitter-textedit-selected.png"
+                background: "../images/twitter-textedit.png"
+                backgroundSelected: "../images/twitter-textedit-selected.png"
                 backgroundCornerMargin: 18
                 paddingRight: clearButton.width + 8
                 baselineOffset: 0
@@ -118,7 +118,7 @@ Sheet {
 
         Rectangle {
             anchors.fill: parent
-            color: "#F2F2F2"
+            color: "#000000"
         }
 
         MouseArea {
@@ -160,7 +160,7 @@ Sheet {
                     width: recipientselector.width
                     height: visible ? 80 : 0
                     visible: (!searchProfiles && text_input.text.length > 0) ? true : false
-                    color: "#F2F2F2"
+                    color: "#000000"
                     Text {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
@@ -168,7 +168,7 @@ Sheet {
 
                         font.pixelSize: fonts.c_size
                         font.bold: true
-                        color: "#00C0FF"
+                        color: "#ffffff"
 
                         text: qsTrId("qtn_twitter_search_command") + " \""+text_input.text+"\""
                     }

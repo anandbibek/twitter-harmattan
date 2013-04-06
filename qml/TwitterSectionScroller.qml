@@ -73,7 +73,7 @@ Item {
         }
         Image {
             id: horizontalIndicator
-            source: "image://theme/meegotouch-fast-scroll-handle"
+            source: "image://theme/meegotouch-fast-scroll-handle-inverted"
             anchors.horizontalCenter: parent.horizontalCenter
             y: Math.max(0, (listView.visibleArea.yPosition / (1 - listView.visibleArea.heightRatio)) * (listView.height - horizontalIndicator.height))
             visible: container.dragging ? false : true

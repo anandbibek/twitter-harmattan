@@ -135,6 +135,7 @@ Window {
     }
 
     Component.onCompleted: {
+        theme.inverted = true
         if (initialPage) pageStack.push(initialPage);
     }
 

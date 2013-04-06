@@ -16,7 +16,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: "#DDDDDD"
+        color: "#202020"
         visible: mouse_area.containsMouse ? true : false
     }
 

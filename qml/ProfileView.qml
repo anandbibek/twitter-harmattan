@@ -75,7 +75,7 @@ TwitterPage {
 
             height: !profileview_protected || profileview_own_profile ? basicProfileHeader.height : basicProfileHeader.height + followRequestButton.height + 32
 
-            color: "#E3E3E3"
+            color: "#000000"
 
             BasicProfileHeader {
                 id: basicProfileHeader
@@ -112,7 +112,7 @@ TwitterPage {
 
                 TwitterButton {
                     id: followUnfollowButton
-                    inverted: false
+                    inverted: true
                     visible: !profileview_loading && !twitter_authenticating && !profileview_protected && !profileview_blocked && !profileview_own_profile && twitter_account_exists
 
                     anchors.right: parent.right
@@ -120,6 +120,7 @@ TwitterPage {
                     anchors.verticalCenter: parent.verticalCenter
 
                     text: profileview_following ? qsTrId("qtn_twitter_profile_unfollow") : qsTrId("qtn_twitter_profile_follow")
+                    textColor: "white"
 
                     onClicked: {
                         dataHandler.followProfile(profileview_screen_name, !profileview_following);
@@ -156,7 +157,7 @@ TwitterPage {
             TwitterButton {
                 id: followRequestButton
 
-                inverted: false
+                inverted: true
                 visible: profileview_protected && !profileview_own_profile && twitter_account_exists
 
                 anchors.top: basicProfileHeader.bottom
@@ -165,6 +166,7 @@ TwitterPage {
                 anchors.rightMargin: 10
 
                 text: qsTrId("qtn_twitter_profile_follow_request")
+                textColor: "white"
 
                 onClicked: {
                     dataHandler.followProfile(profileview_screen_name, true);
@@ -203,6 +205,7 @@ TwitterPage {
             wrapMode: Text.WordWrap
             textFormat: Text.RichText
             text: profileview_description
+            color: "white"
         }
 
         Text {
@@ -307,6 +310,7 @@ TwitterPage {
 
                         font.pixelSize: fonts.f_size
                         font.bold: true
+                        color: "white"
 
                         text: qsTrId("qtn_twitter_profile_tweets")
                     }
@@ -332,6 +336,7 @@ TwitterPage {
 
                         font.pixelSize: fonts.f_size
                         font.bold: true
+                        color: "white"
 
                         text: qsTrId("qtn_twitter_more_favorites")
                     }
@@ -363,6 +368,7 @@ TwitterPage {
 
                         font.pixelSize: fonts.f_size
                         font.bold: true
+                        color: "white"
 
                         text: qsTrId("qtn_twitter_profile_following")
                     }
@@ -388,6 +394,7 @@ TwitterPage {
 
                         font.pixelSize: fonts.f_size
                         font.bold: true
+                        color: "white"
 
                         text: qsTrId("qtn_twitter_profile_followers")
                     }
@@ -419,6 +426,7 @@ TwitterPage {
 
                         font.pixelSize: fonts.f_size
                         font.bold: true
+                        color: "white"
 
                         text: qsTrId("qtn_twitter_profile_listed")
                     }

@@ -81,7 +81,7 @@ TwitterPage {
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width - 32
-            color: "#999999"
+            color: "#ffffff"
             font.pixelSize: 50
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignHCenter

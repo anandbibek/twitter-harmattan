@@ -33,7 +33,7 @@ TwitterPage {
 
         clip: true
 
-        color: "#e0e0e0"
+        color: "#101010"
 
         Column {
             id: signInInfoColumn
@@ -56,7 +56,7 @@ TwitterPage {
                 wrapMode: Text.WordWrap
 
                 font.pixelSize: fonts.c_size
-                color: "#999999"
+                color: "#ffffff"
 
                 horizontalAlignment: Text.AlignHCenter
             }
