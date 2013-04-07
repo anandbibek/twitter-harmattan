@@ -51,7 +51,6 @@ TwitterPage {
             clip: true
 
             pressDelay: 100
-            cacheBuffer: 2000
 
             model: showMentions ? myMentionsModel : showRetweetedByMe ? myRetweetedModel : myTimelineModel
             delegate: TimelineItem {
