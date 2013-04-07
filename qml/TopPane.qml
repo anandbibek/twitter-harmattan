@@ -1,12 +1,8 @@
 import QtQuick 1.1
-import com.nokia.meego 1.0
+import com.nokia.meego 1.1
 
-Rectangle {
-    height: 72
-    width: 480
-    color: "#000000"
-    Image {
-        height: 72
-        source: "../images/twitter-top-pane.png"
-    }
+
+Image {
+    source: screen.currentOrientation == Screen.Portrait ? "../images/twitter-top-pane.png"
+                                                         : "../images/twitter-top-pane-landscape.png"
 }

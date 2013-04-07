@@ -4,7 +4,7 @@ import com.nokia.meego 1.0
 TwitterPage {
     id: mainview
 
-    orientationLock: window.orientationLock
+    //orientationLock: window.orientationLock
 
     width: parent.width
     height: parent.height

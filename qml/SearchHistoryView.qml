@@ -38,7 +38,7 @@ TwitterPage {
                 backgroundCornerMargin: 18
                 paddingRight: clearButton.width + 8
                 baselineOffset: 0
-                textColor: "#ffffff"
+                textColor: "#000000"
             }
 
             platformSipAttributes: SipAttributes {

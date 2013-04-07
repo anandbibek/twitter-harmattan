@@ -4,7 +4,7 @@ import com.nokia.meego 1.0
 TwitterPage {
     id: timelineview
 
-    orientationLock: window.orientationLock
+    //orientationLock: window.orientationLock
 
     property bool showMentions: false
     property bool showRetweetedByMe: false
@@ -51,6 +51,7 @@ TwitterPage {
             clip: true
 
             pressDelay: 100
+            cacheBuffer: 2000
 
             model: showMentions ? myMentionsModel : showRetweetedByMe ? myRetweetedModel : myTimelineModel
             delegate: TimelineItem {
@@ -114,7 +115,7 @@ TwitterPage {
                     anchors.centerIn: parent
                     running: visible
                     visible: !refreshing_header.visible && timelineview_is_loading_more ? true : false
-                    platformStyle: BusyIndicatorStyle {inverted: false}
+                    platformStyle: BusyIndicatorStyle {inverted: true}
                 }
             }
 
@@ -173,18 +174,18 @@ TwitterPage {
         onShowHomePage: {
             if (!showMentions && !showRetweetedByMe) {
                 window.unreadTweets = false;
-                timeline_listview.positionViewAtBeginning();
+                //timeline_listview.positionViewAtBeginning();
             }
         }
 
         onShowMentionsTab: {
             window.unreadMentions = false;
-            timeline_listview.positionViewAtBeginning();
+            //timeline_listview.positionViewAtBeginning();
         }
 
         onShowMessagesTab: {
             window.unreadMessages = false;
-            timeline_listview.positionViewAtBeginning();
+            //timeline_listview.positionViewAtBeginning();
         }
         onSaveCurrentTweetId: {
             if (!showMentions && !showRetweetedByMe) {
@@ -203,7 +204,7 @@ TwitterPage {
 
     tools: ToolBarLayout {
         ToolIcon {
-            iconSource: "../images/twitter-icon-toolbar-back.png"
+            iconId: "toolbar-back"
             onClicked: {
                 window.prevPage();
             }

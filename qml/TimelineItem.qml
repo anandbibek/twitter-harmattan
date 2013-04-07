@@ -252,6 +252,7 @@ Item {
         width: parent.width
         anchors.bottom: parent.bottom
         height: 1
+        opacity: 0
         color: "#606060"
     }
 

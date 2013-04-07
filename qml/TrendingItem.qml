@@ -68,6 +68,7 @@ Item {
         width: parent.width
         anchors.top: parent.bottom
         height: 1
+        opacity: 0.5
         color: "#808080"
     }
 }

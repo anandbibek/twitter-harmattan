@@ -436,7 +436,7 @@ TwitterPage {
     tools: ToolBarLayout {
         ToolIcon {
             id: toolBarback
-            iconSource: "../images/twitter-icon-toolbar-back.png";
+            iconId: "toolbar-back";
             onClicked: {
                 window.prevPage();                
             }
@@ -458,7 +458,7 @@ TwitterPage {
             }
         }
         ToolIcon {
-            iconSource: tweet_favorited ? "../images/twitter-icon-toolbar-favourite-marked.png" : "image://theme/icon-m-toolbar-favorite-unmark"
+            iconSource: tweet_favorited ? "../images/twitter-icon-toolbar-favourite-marked.png" : "../images/twitter-icon-toolbar-favourite.png"
             visible: editable ? true : false
             onClicked: {
                 dataHandler.favoriteTweet(tweet_tweetid,!tweet_favorited);
