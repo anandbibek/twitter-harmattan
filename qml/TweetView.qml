@@ -62,7 +62,7 @@ TwitterPage {
         anchors.right: parent.right
         opacity: 0
 
-        okButtonEnabled: validMessage
+        okButtonEnabled: validMessage && editable
         okText: qsTrId("qtn_twitter_reply_tweet_command")
 
         onOkClicked: {
@@ -348,7 +348,7 @@ TwitterPage {
                 id: reply_edit
                 anchors.left: parent.left
                 anchors.right: parent.right
-                visible: (editable && !tweetview_loading && !twitter_authenticating) ? true : false
+                visible: (!tweetview_loading && !twitter_authenticating) ? true : false
                 placeholderText: qsTrId("qtn_twitter_reply_hint")
                 state: "minimized"
 
