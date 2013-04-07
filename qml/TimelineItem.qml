@@ -1,5 +1,5 @@
 import QtQuick 1.1
-import com.nokia.meego 1.0
+import com.nokia.meego 1.1
 
 Item {
     id: timelinedelegate
@@ -116,6 +116,40 @@ Item {
                                 dataHandler.retweetMessage(original_tweetid);
                             }
                             contextmenu.close();
+                        }
+                    }
+                    ColumnButton {
+                        visible: name.toLowerCase() != dataHandler.authenticatedUser() && !protected_profile ? true : false
+
+                        Row{
+                            anchors.left: parent.left
+                            anchors.leftMargin: 16
+                            anchors.verticalCenter: parent.verticalCenter
+
+                            spacing: 16
+
+                            Image {
+                                anchors.verticalCenter: parent.verticalCenter
+                                source: "../images/quote_tweet.png"
+                            }
+                            Text {
+                                anchors.verticalCenter: parent.verticalCenter
+                                text: "Quote " + qsTrId("qtn_twitter_retweet_command")
+                                font.pixelSize: fonts.f_size
+                                font.bold: true
+                                color: "white"
+                            }
+                        }
+
+                        onClicked: {
+                            contextmenu.close();
+                            dataHandler.currentTweetId = original_tweetid;
+                            var p = window.nextPage("TweetView.qml");
+                            p.tweet_name = name;
+                            p.goBackOnDone = true;
+                            p.tweet_desc_plain = status_text
+                            p.quote_retweet = true;
+                            p.openTweetEditor();
                         }
                     }
                     ColumnButton {
@@ -247,14 +281,14 @@ Item {
         anchors.right: parent.right
     }
 
-    Rectangle {
-        id: tweet_separator_line
-        width: parent.width
-        anchors.bottom: parent.bottom
-        height: 1
-        opacity: 0
-        color: "#606060"
-    }
+//    Rectangle {
+//        id: tweet_separator_line
+//        width: parent.width
+//        anchors.bottom: parent.bottom
+//        height: 1
+//        opacity: 0
+//        color: "#606060"
+//    }
 
     Component.onCompleted: {
         ListView.view.itemCreated(index);

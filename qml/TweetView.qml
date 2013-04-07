@@ -1,9 +1,10 @@
 import QtQuick 1.1
-import com.nokia.meego 1.0
+import com.nokia.meego 1.1
 
 TwitterPage {
     id: container
     property string tweet_desc: ""
+    property string tweet_desc_plain: ""
     property string tweet_name: ""
     property string tweet_place: ""
     property string tweet_timestamp: ""
@@ -18,9 +19,10 @@ TwitterPage {
     property bool tweet_favorited: false
     property string tweet_original_status: ""
     property bool tweet_protected_profile: false
+    property bool quote_retweet : false
 
     orientationLock: window.orientationLock
-     
+
     anchors.fill: parent
 
     property bool editable: ((tweet_tweetid != "") && twitter_account_exists) ? true : false
@@ -62,7 +64,7 @@ TwitterPage {
         anchors.right: parent.right
         opacity: 0
 
-        okButtonEnabled: validMessage && editable
+        okButtonEnabled: validMessage && editable && !tweetview_loading
         okText: qsTrId("qtn_twitter_reply_tweet_command")
 
         onOkClicked: {
@@ -348,13 +350,13 @@ TwitterPage {
                 id: reply_edit
                 anchors.left: parent.left
                 anchors.right: parent.right
-                visible: (!tweetview_loading && !twitter_authenticating) ? true : false
+                visible: (!twitter_authenticating) ? true : false
                 placeholderText: qsTrId("qtn_twitter_reply_hint")
                 state: "minimized"
 
                 MouseArea {
                     anchors.fill: parent
-                    onPressed: {                        
+                    onPressed: {
                         mouse.accepted = reply_edit.openTweetEditor();
                     }
                 }
@@ -363,13 +365,19 @@ TwitterPage {
                     id: focusTimer
                     interval: 300
                     onTriggered: {
-                        var mentions = dataHandler.getMentions(tweet_original_status, "@" + tweet_name);
-                        var reply_user = "@" + tweet_name + " ";
-                        reply_edit.text =  reply_user + mentions;
-                        if (mentions.length > 0) {
-                            reply_edit.select(reply_user.length, reply_edit.textLenght);
-                        } else {
-                            reply_edit.cursorPosition = reply_edit.textLenght;
+                        if(quote_retweet) {
+                            var RT = " RT @" + tweet_name + ": ";
+                            reply_edit.text = RT + tweet_desc_plain ;
+                        }
+                        else {
+                            var mentions = dataHandler.getMentions(tweet_original_status, "@" + tweet_name);
+                            var reply_user = "@" + tweet_name + " ";
+                            reply_edit.text =  reply_user + mentions;
+                            if (mentions.length > 0) {
+                                reply_edit.select(reply_user.length, reply_edit.textLenght);
+                            } else {
+                                reply_edit.cursorPosition = reply_edit.textLenght;
+                            }
                         }
                     }
                 }
@@ -438,7 +446,7 @@ TwitterPage {
             id: toolBarback
             iconId: "toolbar-back";
             onClicked: {
-                window.prevPage();                
+                window.prevPage();
             }
         }
         ToolIcon {
@@ -464,14 +472,14 @@ TwitterPage {
                 dataHandler.favoriteTweet(tweet_tweetid,!tweet_favorited);
             }
         }
-//        ToolIcon {
-//            enabled: false
-//            visible: editable ? true : false
-//            iconSource: "../images/twitter-icon-toolbar-share.png"
-//            onClicked: {
+        //        ToolIcon {
+        //            enabled: false
+        //            visible: editable ? true : false
+        //            iconSource: "../images/twitter-icon-toolbar-share.png"
+        //            onClicked: {
 
-//            }
-//        }
+        //            }
+        //        }
     }
 
     onStatusChanged: {
@@ -487,6 +495,8 @@ TwitterPage {
             }
         } else if (status == PageStatus.Deactivating) {
             state = "";
+            tweet_desc_plain = "";
+            quote_retweet = false;
         }
     }
 
