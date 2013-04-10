@@ -19,9 +19,8 @@ TwitterPage {
     property bool tweet_favorited: false
     property string tweet_original_status: ""
     property bool tweet_protected_profile: false
-    property bool quote_retweet : false
 
-    orientationLock: window.orientationLock
+    //orientationLock: window.orientationLock
 
     anchors.fill: parent
 
@@ -365,19 +364,13 @@ TwitterPage {
                     id: focusTimer
                     interval: 300
                     onTriggered: {
-                        if(quote_retweet) {
-                            var RT = " RT @" + tweet_name + ": ";
-                            reply_edit.text = RT + tweet_desc_plain ;
-                        }
-                        else {
-                            var mentions = dataHandler.getMentions(tweet_original_status, "@" + tweet_name);
-                            var reply_user = "@" + tweet_name + " ";
-                            reply_edit.text =  reply_user + mentions;
-                            if (mentions.length > 0) {
-                                reply_edit.select(reply_user.length, reply_edit.textLenght);
-                            } else {
-                                reply_edit.cursorPosition = reply_edit.textLenght;
-                            }
+                        var mentions = dataHandler.getMentions(tweet_original_status, "@" + tweet_name);
+                        var reply_user = "@" + tweet_name + " ";
+                        reply_edit.text =  reply_user + mentions;
+                        if (mentions.length > 0) {
+                            reply_edit.select(reply_user.length, reply_edit.textLenght);
+                        } else {
+                            reply_edit.cursorPosition = reply_edit.textLenght;
                         }
                     }
                 }
@@ -495,8 +488,6 @@ TwitterPage {
             }
         } else if (status == PageStatus.Deactivating) {
             state = "";
-            tweet_desc_plain = "";
-            quote_retweet = false;
         }
     }
 

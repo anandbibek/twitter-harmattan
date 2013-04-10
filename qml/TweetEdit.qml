@@ -35,8 +35,9 @@ Rectangle {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
-        height: 2
-        color: "#000000"
+        height: 1
+        opacity: 0.1
+        color: "#cccccc"
     }
 
     Text {

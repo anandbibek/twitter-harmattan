@@ -1,14 +1,15 @@
 import QtQuick 1.1
-import com.nokia.meego 1.0
+import com.nokia.meego 1.1
 
 TwitterPage {
     id: composeview
 
-    orientationLock: window.orientationLock
+    //orientationLock: window.orientationLock
 
     Fonts { id: fonts }
 
     property bool validMessage: tweet_edit.textLenght < 141 && tweet_edit.textLenght > 0
+    property string retweet : ""
 
     property alias text: tweet_edit.text
     property alias cursorPosition: tweet_edit.cursorPosition
@@ -75,6 +76,20 @@ TwitterPage {
             initialHeight: composeview.height - topbar.height
             text: composeview_in_reply_to != "" ? "@" + composeview_in_reply_to + " " : ""
         }
+    }
+
+    Timer {
+        id: focusTimer
+        interval: 750
+        onTriggered: {
+            tweet_edit.text = retweet
+            retweet = ""
+        }
+    }//Timer is necessary to delay until kb is opened else buttons are not aligned properly
+
+    function setRT(content) {
+        retweet = content
+        focusTimer.start()
     }
 
     ScrollDecorator {

@@ -78,12 +78,12 @@ Item {
                         }
 
                         onClicked: {
+                            contextmenu.close();
                             dataHandler.currentTweetId = original_tweetid;
                             var p = window.nextPage("TweetView.qml");
                             p.tweet_name = name;
                             p.goBackOnDone = true;
                             p.openTweetEditor();
-                            contextmenu.close();
                         }
                     }
                     ColumnButton {
@@ -119,7 +119,7 @@ Item {
                         }
                     }
                     ColumnButton {
-                        visible: name.toLowerCase() != dataHandler.authenticatedUser() && !protected_profile ? true : false
+                        visible: !protected_profile ? true : false
 
                         Row{
                             anchors.left: parent.left
@@ -134,7 +134,7 @@ Item {
                             }
                             Text {
                                 anchors.verticalCenter: parent.verticalCenter
-                                text: "Quote " + qsTrId("qtn_twitter_retweet_command")
+                                text: "RT "+ qsTrId("qtn_twitter_retweet_command")
                                 font.pixelSize: fonts.f_size
                                 font.bold: true
                                 color: "white"
@@ -143,13 +143,9 @@ Item {
 
                         onClicked: {
                             contextmenu.close();
-                            dataHandler.currentTweetId = original_tweetid;
-                            var p = window.nextPage("TweetView.qml");
-                            p.tweet_name = name;
-                            p.goBackOnDone = true;
-                            p.tweet_desc_plain = status_text
-                            p.quote_retweet = true;
-                            p.openTweetEditor();
+                            var c = window.nextPage("ComposeView.qml");
+                            var content = "RT @" + name + ": " + status_text
+                            c.setRT(content);
                         }
                     }
                     ColumnButton {
