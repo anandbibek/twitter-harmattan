@@ -1,5 +1,5 @@
 twitter-harmattan (harmattan stock twitter client mod)
-============================================================================
+================
 
 The stock twitter client in N9 is very bright white, which does not respect the battery usage on an AMOLED screen. To overcome this, the mod was made.
 
@@ -10,9 +10,10 @@ Incept install the following deb file to replace stock client with new theme,
 Deb file :: https://dl.dropbox.com/u/26659227/ha...B0m8_armel.deb
 Screenshots gallery :: https://www.dropbox.com/sh/ici5vv6xz2yjzn0/0sYbw0hcM7
 talk.maemo thread :: http://talk.maemo.org/showthread.php?t=89693
-================================================================================
+
+
 To use :: first incept install the deb file from dropbox link, then download my files and put(replace previous files) in /usr/share/twitter folder.
-================================================================================
+=================
 
 (qml files are avilable under /usr/share/twitter/qml)
 
